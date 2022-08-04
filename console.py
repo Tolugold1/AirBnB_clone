@@ -93,8 +93,10 @@ class HBNBCommand(cmd.Cmd):
         new_arg = shlex.split(arg)
         if new_arg[0] not in self.list_of_class:
             print("** class doesn't exist **")
-        if not new_arg[1]:
+            return
+        elif len(new_arg) == 1:
             print("** instance id missing **")
+            return
         else:
             try:
                 j = new_arg[0] + "." + new_arg[1]
@@ -102,9 +104,9 @@ class HBNBCommand(cmd.Cmd):
             except:
                 print("** no instance found **")
                 return
-        if not new_arg[2]:
+        if len(new_arg) == 2:
             print("** attribute name missing **")
-        if not new_arg[3]:
+        elif len(new_arg) == 3:
             print("** value missing **")
         else:
             j = new_arg[0] + "." + new_arg[1]
