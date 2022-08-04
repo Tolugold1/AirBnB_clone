@@ -6,6 +6,11 @@ import sys
 from models.base_model import BaseModel
 from models import storage
 from models.user import User
+from models.amenity import Amenity
+from models.city import City
+from models.place import Place
+from models.review import Review
+from models.state import State
 
 
 class HBNBCommand(cmd.Cmd):
@@ -13,7 +18,8 @@ class HBNBCommand(cmd.Cmd):
     prompt = '(hbnb) '
     intro = 'Type help to list command'
 
-    list_of_class = ["BaseModel", "User"]
+    list_of_class = ["BaseModel", "User", "Amenity", "City",
+                     "Place", "Review", "State"]
 
     def do_create(self, arg):
         """Create a new class"""
