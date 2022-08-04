@@ -5,6 +5,7 @@ import shlex
 import sys
 from models.base_model import BaseModel
 from models import storage
+from models.user import User
 
 
 class HBNBCommand(cmd.Cmd):
@@ -12,7 +13,7 @@ class HBNBCommand(cmd.Cmd):
     prompt = '(hbnb) '
     intro = 'Type help to list command'
 
-    list_of_class = ["BaseModel"]
+    list_of_class = ["BaseModel", "User"]
 
     def do_create(self, arg):
         """Create a new class"""
