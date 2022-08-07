@@ -128,9 +128,7 @@ class HBNBCommand(cmd.Cmd):
 
     def emptyline(self):
         """Do nothing if no command is given"""
-        if self.lastcmd:
-            self.lastcmd = ""
-            return self.onecmd('\n')
+        return False
 
     def do_quit(self, arg):
         """Quit command to exit the program"""
