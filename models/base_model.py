@@ -3,13 +3,13 @@
 class BaseModel that defines all common attributes/methods for other classes
 """
 import uuid
-from datetime import datetime
+from datetime import datetime, date, time
 import models
 
 
 class BaseModel:
     """class BaseModel that defines all methods"""
-    def __init__(self, *arg, **kwargs):
+    def __init__(self, *args, **kwargs):
         """Initializing BaseModel"""
         if kwargs:
             for key, value in kwargs.items():
