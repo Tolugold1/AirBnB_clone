@@ -118,12 +118,12 @@ class HBNBCommand(cmd.Cmd):
         else:
             j = new_arg[0] + "." + new_arg[1]
             if new_arg[3] is float:
-                value = float(new_arg[3]) # casting value unto it datatype
+                value = float(new_arg[3])  # casting value unto it datatype
             elif new_arg[3] is int:
                 value = int(new_arg[3]) # int casting
             else:
                 value = str(new_arg[3].strip(":\"'"))
-            setattr(storage.all()[j], new_arg[2].strip(":\"'"), value) # test for dictionary attribute
+            setattr(storage.all()[j], new_arg[2].strip(":\"'"), value)
             storage.save()
 
     def emptyline(self):
