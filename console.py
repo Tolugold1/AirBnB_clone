@@ -44,7 +44,7 @@ class HBNBCommand(cmd.Cmd):
         new_arg = arg.split()
         if new_arg[0] not in self.list_of_class:
             print("** class doesn't exist **")
-        if len(new_arg) < 2:
+        elif len(new_arg) < 2:
             print("** instance id missing **")
         else:
             try:
