@@ -15,8 +15,7 @@ from models.state import State
 
 class HBNBCommand(cmd.Cmd):
     """program that contains the entry point of the command interpreter"""
-    prompt = '(hbnb) '
-    intro = 'Type help to list command'
+    prompt = "(hbnb) "
 
     list_of_class = ["BaseModel", "User", "Amenity", "City",
                      "Place", "Review", "State"]
