@@ -1,8 +1,12 @@
 #!/usr/bin/python3
-"""program that contains the entry point of the command interpreter"""
+"""
+program that contains the entry point of the command interpreter
+"""
 import cmd
 import shlex
 import sys
+from tkinter import E
+
 from models.base_model import BaseModel
 from models import storage
 from models.user import User
@@ -14,7 +18,9 @@ from models.state import State
 
 
 class HBNBCommand(cmd.Cmd):
-    """program that contains the entry point of the command interpreter"""
+    """
+    program that contains the entry point of the command interpreter
+    """
     prompt = "(hbnb) "
 
     list_of_class = ["BaseModel", "User", "Amenity", "City",
@@ -68,7 +74,7 @@ class HBNBCommand(cmd.Cmd):
                 j = new_arg[0] + '.' + new_arg[1]
                 storage.all().pop(j)
                 storage.save()
-            except:
+            except E as N:
                 print("** no instance found **")
 
     def do_all(self, arg):
@@ -107,7 +113,7 @@ class HBNBCommand(cmd.Cmd):
             try:
                 j = new_arg[0] + "." + new_arg[1]
                 storage.all()[j]
-            except:
+            except E as N:
                 print("** no instance found **")
                 return
         if len(new_arg) == 2:
@@ -119,7 +125,7 @@ class HBNBCommand(cmd.Cmd):
             if new_arg[3] is float:
                 value = float(new_arg[3])  # casting value unto it datatype
             elif new_arg[3] is int:
-                value = int(new_arg[3]) # int casting
+                value = int(new_arg[3])  # int casting
             else:
                 value = str(new_arg[3].strip(":\"'"))
             setattr(storage.all()[j], new_arg[2].strip(":\"'"), value)
