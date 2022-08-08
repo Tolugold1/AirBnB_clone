@@ -5,7 +5,6 @@ program that contains the entry point of the command interpreter
 import cmd
 import shlex
 import sys
-from tkinter import E
 
 from models.base_model import BaseModel
 from models import storage
@@ -74,7 +73,7 @@ class HBNBCommand(cmd.Cmd):
                 j = new_arg[0] + '.' + new_arg[1]
                 storage.all().pop(j)
                 storage.save()
-            except E as N:
+            except TypeError:
                 print("** no instance found **")
 
     def do_all(self, arg):
@@ -113,7 +112,7 @@ class HBNBCommand(cmd.Cmd):
             try:
                 j = new_arg[0] + "." + new_arg[1]
                 storage.all()[j]
-            except E as N:
+            except TypeError:
                 print("** no instance found **")
                 return
         if len(new_arg) == 2:
